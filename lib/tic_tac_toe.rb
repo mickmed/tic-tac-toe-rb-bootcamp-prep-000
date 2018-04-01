@@ -111,13 +111,13 @@ def winner(board)
 end
 
 def play(board)
-   until turn_count(board) == 8
-    
+   until over?(board) == true
     turn(board)
-
-    if over?(board)
-      puts winner(board)
-      # break
-    end
-   end
+  end
+  if won?(board)
+    puts "Congratulations #{winner}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+  
 end
